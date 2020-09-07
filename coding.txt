@@ -1,25 +1,23 @@
-java coding test
 class Solution {
     public int solution(String[][] relation) {
         int answer = 0;
+        char str[10];
         for(int i=0;i<8;i++){
-            String str=new String();
+            if(relation[i][j]==str){
+                answer++;
+            }
+            if(relation[0][j]==str){
+                answer++;
+            }
             for(int j=0;j<20;j++){
                 if(relation[i]!=relation[j])
                 {
                     answer++;
-                    break;
-                }else{       
-                    if(relation[i][j]!=relation[i][j+1]){
+                    if(relation[i]!=relation[i][j]){
                         str=relation[i][j];
-                        if(relation[i+j][j]!==str){
-                        answer++;
-                        break;
-                        }else{
-                            continue;
-                        }
                     }
-                    }
+                    break;
+                }else{
                     continue;
                 }             
             }
